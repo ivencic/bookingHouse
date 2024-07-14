@@ -1,4 +1,4 @@
-"""import datetime
+import datetime
 
 from django.utils.deprecation import MiddlewareMixin
 from rest_framework.request import Request
@@ -18,4 +18,6 @@ class JWTAuthenticationsMiddleware(MiddlewareMixin):
                 if datetime.fromtimestamp(token['exp']) < datetime.now():
                     raise TokenError('Token is expired')
                 request.META['HTTP_AUTHORIZATION'] = f'JWT {access_token}'
-"""
+
+            except TokenError:
+                new_access_token = self.refresh_access_token(refresh_token)
