@@ -1,10 +1,11 @@
 from datetime import datetime
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status, generics
 from django.contrib.auth import authenticate
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import AllowAny
+from .serializers import RegisterSerializer
 
 from users.serializers import RegisterSerializer
 
@@ -32,6 +33,7 @@ def set_jwt_cookies(response, user):
         samesite='Lax',
         expires=refresh_expiry
     )
+
 
 class LoginView(APIView):
     permission_classes = [AllowAny]
@@ -76,7 +78,8 @@ class LogoutView(APIView):
         response.delete_cookie('refresh_token')
         return response
 
-class RegisterView(APIView):
+
+"""class RegisterView(APIView):
     def post(self, request):
         serializer = RegisterSerializer(data=request.data)
         if serializer.is_valid():
@@ -89,3 +92,9 @@ class RegisterView(APIView):
         else:
             return Response(serializer.errors,
 status=status.HTTP_400_BAD_REQUEST)
+"""
+
+
+class RegisterView(generics.CreateAPIView):
+    serializer_class = RegisterSerializer
+    permission_classes = [AllowAny]
