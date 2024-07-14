@@ -1,0 +1,20 @@
+Primary Functional:
+
+1. Create Project - DONE
+2. Create DB (MySQL) - DONE
+3. Install packages and add to requirements.txt - DONE
+4. Create .env file and insert CONST for DB, SECRET_KEY, DEBUG, ALLOWED_HOSTS - DONE
+5. Create apps (announces, users, booking, reviews, ratings) - DONE
+6. Create .gitignore file, init git and create git repository (gitHub) - DONE
+7. Realize User logic with JWTAuthentication, middleware for automatic refresh token - DONE
+8. Create and realize serializers, views, and urls to (register, login, logout) - DONE
+9. announces app - create model, serializers, views (with User logic) and urls - DONE
+10. bookings app - create model, serializers, views (with User logic) and urls
+11. reviews app - create model, serializers, views (with User logic) and urls
+12. ratings app - create model, serializers, views (with User logic) and urls
+
+
+Additional Functional:
+1. Sorting by popularity (count of views and reviews)
+2. Search History
+3. History of announces view
