@@ -12,6 +12,7 @@ Primary Functional:
 10. bookings app - create model, serializers, views (with User logic) and urls
 11. reviews app - create model, serializers, views (with User logic) and urls
 12. ratings app - create model, serializers, views (with User logic) and urls
+13. Add swagger for documentation - DONE
 
 
 Additional Functional:
