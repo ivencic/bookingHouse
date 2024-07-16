@@ -9,9 +9,9 @@ Primary Functional:
 7. Realize User logic with JWTAuthentication, middleware for automatic refresh token - DONE
 8. Create and realize serializers, views, and urls to (register, login, logout) - DONE
 9. announces app - create model, serializers, views (with User logic) and urls - DONE
-10. bookings app - create model, serializers, views (with User logic) and urls
-11. reviews app - create model, serializers, views (with User logic) and urls
-12. ratings app - create model, serializers, views (with User logic) and urls
+10. bookings app - create model, serializers, views (with User logic) and urls - DONE
+11. reviews app - create model, serializers, views (with User logic) and urls -
+12. ratings app - create model, serializers, views (with User logic) and urls -
 13. Add swagger for documentation - DONE
 
 
