@@ -16,6 +16,6 @@ Primary Functional:
 
 
 Additional Functional:
-1. Sorting by popularity (count of views and reviews)
-2. Search History
-3. History of announces view
+1. Sorting by popularity (count of views and reviews) - DONE
+2. Search History - DONE
+3. History of announces view - DONE
