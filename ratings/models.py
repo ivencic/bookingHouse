@@ -9,7 +9,7 @@ User = get_user_model()
 class Rating(models.Model):
     RATING_CHOICES = [(i, str(i)) for i in range(1, 6)]
 
-    listing = models.ForeignKey(Listing, on_delete=models.CASCADE)
+    listing = models.ForeignKey(Listing, related_name='ratings', on_delete=models.CASCADE)
     booking = models.ForeignKey(Booking, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     rating = models.IntegerField(choices=RATING_CHOICES)
