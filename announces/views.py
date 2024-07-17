@@ -3,6 +3,8 @@ from rest_framework import generics
 from .models import Listing
 from .serializers import ListingSerializer
 from .permissions import IsAdminOrOwnerOrReadOnly
+from django.db.models import Count
+from rest_framework.permissions import IsAuthenticated
 
 
 class ListingListCreateView(generics.ListCreateAPIView):
@@ -28,3 +30,11 @@ class ListingDetailView(generics.RetrieveUpdateDestroyAPIView):
     def perform_destroy(self, instance):
         instance.is_soft_deleted = True
         instance.save()
+
+
+class PopularListingsView(generics.ListAPIView):
+    queryset = Listing.objects.annotate(
+        review_count=Count('reviews')
+    ).order_by('-views', '-review_count')
+    serializer_class = ListingSerializer
+    permission_classes = [IsAuthenticated]
